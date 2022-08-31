@@ -15,7 +15,7 @@ You can contribute by submitting your own scripts, also written in Python, which
 
 ### Contribution Guidelines
 
-The contribution guidelines are as per the guide [HERE](https://github.com/larymak/Python-project-Scripts/blob/main/CONTRIBUTING.md).
+The contribution guidelines are as per the guide [HERE](https://github.com/D3vGh/python-project-scripts/blob/main/CONTRIBUTING.md).
 
 ### Instructions
 
