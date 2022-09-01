@@ -9,8 +9,7 @@ Please note that we have a code of conduct that we need to follow moving forward
 - Proposing new features
 - Becoming a maintainer
 
-## We Develop with Github
-We use github to host code, to track issues and feature requests, as well as accept pull requests.
+## Github
 
 ## We Use [Github Flow](https://guides.github.com/introduction/flow/index.html), So All Code Changes Happen Through Pull Requests
 
@@ -24,8 +23,8 @@ Pull requests are the best way to propose changes to the codebase (we use [Githu
 6. Issue that pull request!
 7. Always add a `README` and/or `requirements.txt` to your added code.
 
-## Any contributions you make will be under the MIT Software License
-In short, when you submit code changes, your submissions are understood to be under the same [MIT License](http://choosealicense.com/licenses/mit/) that covers the project. Feel free to contact the maintainers if that's a concern.
+## Any contributions you make will be under the GNU General Public License v3.0 
+In short, when you submit code changes, your submissions are understood to be under the same [GNU General Public License v3.0 ](http://choosealicense.com/licenses/mit/) that covers the project. Feel free to contact the maintainers if that's a concern.
 
 ## Report bugs using Github's [issues](https://github.com/briandk/transcriptase-atom/issues)
 We use GitHub issues to track public bugs. Report a bug by [opening a new issue](); it's that easy!
@@ -52,4 +51,4 @@ You can check [here](https://docs.python-guide.org/writing/style/) for more info
 By contributing, you agree that your contributions will be licensed under its MIT License.
 
 ## References
-This document was adapted from the open-source contribution guidelines for [Facebook's Draft](https://github.com/facebook/draft-js/blob/a9316a723f9e918afde44dea68b5f9f39b7d9b00/CONTRIBUTING.md)
+This document was adapted from the open-source contribution guidelines from [Freecodecamp](https://www.freecodecamp.org/news/how-to-write-a-good-readme-file/)
