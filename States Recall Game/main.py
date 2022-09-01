@@ -1,7 +1,7 @@
 import pandas
 import turtle
 
-# Set up turtle window object
+# Sets up turtle window with background image
 wn = turtle.Screen()
 wn.title("U.S States Game")
 image = "blank_states_img.gif"
@@ -15,7 +15,18 @@ typed_states = []
 while len(typed_states) < 50:
     # Read states data from csv file
     data = pandas.read_csv("50_states.csv")
-    answer = wn.textinput("Guess the state", "What is the capital of the state?").capitalize()
+    
+    answer = wn.textinput("Guess a state", "Guess and type a state found in the US")
+    
+    try:
+        answer.capitalize()
+    except AttributeError:
+        answer = "no value"
+        break
+    else:
+        pass
+    finally:
+        answer = answer.capitalize()
     
     # Updates global list if answer is correct | Program exits if answer='EXIT' or pass if wrong  
     if answer == "Exit":
