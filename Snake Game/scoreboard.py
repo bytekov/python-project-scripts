@@ -2,7 +2,7 @@ from  turtle import Turtle
 
 class Score(Turtle):
     def __init__(self):
-        # Calls it self as a turtle object
+        # Calls this module as a turtle object
         super().__init__()
         self.penup()
         self.hideturtle()

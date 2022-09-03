@@ -11,13 +11,13 @@ wn.setup(width = 600, height = 600)
 wn.title("Snake Game")
 wn.tracer(0)
 wn.bgcolor("black")
-wn.listen()
 
 #Class instances
 snake = Snake()
 food = Food()
 scores = Score()
 game_state = True
+wn.listen()
 
 #Key bindings
 wn.onkey(snake.left, "Left")
