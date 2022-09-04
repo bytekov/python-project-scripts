@@ -109,10 +109,9 @@ parameters = {
     "type": "boolean",
 }
 
-response = requests.get("https://opentdb.com/api.php?amount=10&type=boolean" , params = parameters).json() 
+response = requests.get("https://opentdb.com/api.php" , params = parameters).json() 
 
-response.raise_for_status()
+#response.raise_for_status()
 
 question_data = response["results"]
-
 
