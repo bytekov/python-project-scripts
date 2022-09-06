@@ -1,12 +1,16 @@
-THEME_COLOR = "#375362"
 from faulthandler import disable
 from tkinter import *   
-from quiz_brain import QuizBrain
+from Question_Mngr import Question_Mngr
+
+THEME_COLOR = "#375362"
+
 class QuizInterface:
-    def __init__(self , quiz_obj:QuizBrain):
-        self.quiz = quiz_obj
+    def __init__(self , question_mngr_object: Question_Mngr):
+        self.question_mngr = question_mngr_object
+        
+        # Create tkinter window with canvas
         self.window = Tk()
-        self.window.title("Quizzler")
+        self.window.title("question_mngr Script")
         self.window.config(padx=10, pady=10 , bg=THEME_COLOR)
         self.score_label = Label(self.window, text="Your Score: 0", bg=THEME_COLOR, fg="white")
         self.score_label.grid(row=0, column=1)
@@ -25,32 +29,35 @@ class QuizInterface:
         self.true_btn.grid(row=2, column=0)
         self.false_btn = Button(self.window, image=false_img ,highlightthickness=0 , command = self.false_func)
         self.false_btn.grid(row=2, column=1)
-        self.get_question()
         
+        self.get_question()
         self.window.mainloop()
+       
+    # Get the next question from the question_mngr object if there is more 
     def get_question(self):
-        if self.quiz.still_has_questions():
+        if self.question_mngr.still_has_questions():
             self.app_canvas.config(bg='white') 
-            q_text = self.quiz.next_question()
-            self.app_canvas.itemconfig(self.question_txt, text=q_text) 
+            next_question = self.question_mngr.next_question()
+            self.app_canvas.itemconfig(self.question_txt, text=next_question) 
         else:
             self.app_canvas.itemconfig(self.question_txt, 
-            text =f"Quiz Done \n Your final score was: {self.quiz.score}/{self.quiz.question_number}")
+            text =f"question_mngr Done \n Your final score was: {self.question_mngr.score}/{self.question_mngr.question_number}")
             self.true_btn.config(state='disabled')
             self.false_btn.config(state='disabled')
             
-        
+    # Checks if true is equal to question answer value
     def true_func(self):
-        if "True" == self.quiz.check_answer():
-            self.quiz.score += 1
+        if "True" == self.question_mngr.check_answer():
+            self.question_mngr.score += 1
             self.app_canvas.config(bg='green')     
         else:
             self.app_canvas.config(bg='red')
         self.window.after(400 , self.get_question)
 
+    # Checks if false is equal to question answer value
     def false_func(self):
-        if "False" == self.quiz.check_answer():
-            self.quiz.score += 1
+        if "False" == self.question_mngr.check_answer():
+            self.question_mngr.score += 1
             self.app_canvas.config(bg='green')     
         else:
             self.app_canvas.config(bg='red')
